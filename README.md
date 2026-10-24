@@ -1,0 +1,1 @@
+Personal blog, built with [Astro](https://astro.build/) and [Void-Astro](https://github.com/eAntillon/void-astro) theme.
