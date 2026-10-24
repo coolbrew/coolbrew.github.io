@@ -1,0 +1,17 @@
+---
+import { icons } from '@iconify-json/radix-icons';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'svg'> {
+    name: string;
+}
+
+const { name, ...attributes } = Astro.props;
+const key = name.replace(/^radix-icons:/, '');
+const icon = icons.icons[key as keyof typeof icons.icons];
+if (!icon) throw new Error(`Unknown icon: ${name}`);
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${icons.width} ${icons.height}`} aria-hidden="true" {...attributes}>
+    <Fragment set:html={icon.body} />
+</svg>

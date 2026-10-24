@@ -8,7 +8,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 const posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-const tags =  posts.flatMap(post => post.data.tags).filter((tag, index, self) => self.indexOf(tag) === index);
+const tags =  posts.flatMap(post => post.data.tags ?? []).filter((tag, index, self) => self.indexOf(tag) === index);
 ---
 
 <!doctype html>

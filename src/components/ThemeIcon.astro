@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-iconify'
+import Icon from './Icon.astro'
 const props = Astro.props
 ---
 
@@ -109,7 +109,7 @@ const props = Astro.props
 
 <script >
   // document.addEventListener('astro:page-load', () => {
-    const buttons = document.querySelectorAll('.switch-theme-button'); 
+    const buttons = document.querySelectorAll('.switch-theme-button');
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       if (localStorage.theme === 'dark') {
@@ -122,5 +122,5 @@ const props = Astro.props
     })
   });
 // });
-  
+
 </script>

@@ -84,7 +84,16 @@ blockquote {
     margin: 20px 0;
     color: #666;
     background-color: #f9f9f9;
-    @apply dark:bg-neutral-700 text-white border-l-4 border-neutral-500; 
+    border-left: 4px solid #737373;
+}
+
+html.dark blockquote,
+html.dark th {
+    background-color: #404040;
+}
+
+html.dark blockquote {
+    color: #fff;
 }
 
 /* Code Blocks and Inline Code */
@@ -128,7 +137,7 @@ th, td {
 
 th {
     background-color: #f4f4f4;
-    @apply dark:bg-neutral-700;
+
 }
 
 /* Lists */

@@ -10,21 +10,27 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
-    "@astrojs/mdx": "^3.1.2",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "@astropub/icons": "^0.2.0",
-    "astro": "^4.11.5",
-    "astro-iconify": "^1.2.0",
-    "astro-navbar": "^2.3.2",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/markdown-remark": "^7.3.4",
+    "@astrojs/mdx": "^8.1.1",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@iconify-json/radix-icons": "^1.2.6",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.4.2",
+    "astro-navbar": "^2.4.0",
     "clsx": "^2.1.1",
     "katex": "^0.19.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "overrides": {
+    "katex": "$katex"
   }
 }
