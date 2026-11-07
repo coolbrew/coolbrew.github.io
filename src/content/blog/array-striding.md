@@ -2,8 +2,7 @@
 title: 'Array Striding'
 description: 'Explore how striding describes common NDArray operations'
 pubDate: 'Oct 24 2026'
-heroImage: '/blog-placeholder-1.jpg'
-tags: ["ML"]
+tags: ["machine-learning"]
 ---
 
 **Striding** is a cool concept in efficiently managing matrix (or more generally, N-dimensional array, aka *NDArray*) operations. To visualize the concept easier, let's first consider the simple example of a matrix (aka 2D array).

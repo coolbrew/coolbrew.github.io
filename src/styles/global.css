@@ -7,6 +7,16 @@
     }
 }
 
+:root {
+    --site-width: 56rem; /* 896px */
+}
+
+.site-container {
+    width: 100%;
+    max-width: var(--site-width);
+    margin-inline: auto;
+}
+
 html {
     font-family: 'Reddit Mono', monospace;
     width: 100%;

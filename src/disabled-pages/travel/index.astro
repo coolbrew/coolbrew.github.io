@@ -1,0 +1,50 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('travel')).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Travel | Brewlog" description="Travel journals and photographs from places along the way." />
+  </head>
+  <body class="site-container my-4 dark:bg-neutral-800 dark:text-neutral-300 transition-colors duration-300">
+    <Header />
+    <main class="px-4">
+      <div class="mb-12 flex flex-col gap-4">
+        <h1 class="text-2xl md:text-5xl">Travel</h1>
+        <p class="text-gray-600 dark:text-neutral-400 leading-relaxed">
+          Notes from the road, places to remember, and moments through my lens.
+        </p>
+      </div>
+
+      <section aria-label="Travel posts">
+        {posts.length ? (
+          <div class="flex flex-col gap-6">
+            {posts.map((post) => (
+              <article class="border-b pb-6 flex flex-col gap-3">
+                <div class="flex flex-wrap gap-x-4 gap-y-1">
+                  <FormattedDate date={post.data.pubDate} />
+                  {post.data.location && <span class="text-gray-500 dark:text-gray-400 text-xs font-medium tracking-wide">{post.data.location}</span>}
+                </div>
+                <h2 class="font-bold text-lg"><a href={`/travel/${post.id}/`}>{post.data.title}</a></h2>
+                <p class="text-sm leading-relaxed text-gray-600 dark:text-neutral-400">{post.data.description}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="text-sm text-gray-500 dark:text-neutral-400">Travel stories coming soon.</p>
+        )}
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>

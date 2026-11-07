@@ -17,5 +17,18 @@ const blog = defineCollection({
 })
 
 
-export const collections = { blog }
+const travel = defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/travel' }),
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.coerce.date(),
+        location: z.string().optional(),
+        heroImage: z.string().optional(),
+        heroImageAlt: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+    }),
+})
+
+export const collections = { blog, travel }
 
